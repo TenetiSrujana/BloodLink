@@ -1,5 +1,3 @@
-
-cat > Jenkinsfile <<'EOF'
 pipeline {
     agent any
 
@@ -10,8 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/TenetiSrujana/BloodLink.git'
+                echo 'Source code is checked out from GitHub by Jenkins.'
             }
         }
 
@@ -51,5 +48,3 @@ pipeline {
         }
     }
 }
-EOF
-
