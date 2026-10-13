@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #263247;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 8%;
+    background: #ffffff;
+}
+
+.navbar h2 {
+    margin: 0;
+    color: #c62840;
+}
+
+.navbar a {
+    margin-left: 20px;
+    color: #263247;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    padding: 85px 10%;
+    background: #fff0f2;
+}
+
+.tagline {
+    color: #c62840;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin: 12px 0;
+    font-size: clamp(36px, 6vw, 60px);
+    line-height: 1.15;
+}
+
+.hero p {
+    max-width: 600px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 22px;
+    border-radius: 7px;
+    background: #c62840;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section {
+    padding: 55px 10%;
+}
+
+.section h2 {
+    color: #c62840;
+}
+
+.tinted {
+    background: #fff7f7;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.card {
+    padding: 22px;
+    border: 1px solid #f0d6da;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.card h3 {
+    color: #c62840;
+}
+
+footer {
+    padding: 28px 10%;
+    background: #263247;
+    color: #ffffff;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .navbar a {
+        margin-left: 0;
+        margin-right: 12px;
+    }
+
+    .hero,
+    .section {
+        padding: 40px 6%;
+    }
+}
