@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -37,14 +38,41 @@ pipeline {
                 '''
             }
         }
+
+        stage('Deploy') {
+            steps {
+                sh '''
+                    set -eu
+
+                    if docker ps -a --format '{{.Names}}' | grep -qx 'bloodlink-app'; then
+                        docker rm -f bloodlink-app
+                    fi
+
+                    docker run -d --name bloodlink-app -p 8081:80 bloodlink:1.0
+
+                    for i in 1 2 3 4 5; do
+                        if curl -fsS http://localhost:8081/ >/dev/null; then
+                            echo "BloodLink deployment verified successfully."
+                            exit 0
+                        fi
+                        sleep 2
+                    done
+
+                    echo "Deployment verification failed."
+                    docker logs bloodlink-app
+                    exit 1
+                '''
+            }
+        }
     }
 
     post {
         success {
-            echo 'BloodLink CI pipeline completed successfully.'
+            echo 'BloodLink CI/CD pipeline completed successfully.'
         }
         failure {
-            echo 'BloodLink CI pipeline failed. Check the console output.'
+            echo 'BloodLink pipeline failed. Check the console output.'
         }
     }
 }
+
