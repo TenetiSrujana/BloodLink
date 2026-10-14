@@ -12,8 +12,6 @@ The website provides general blood donation information. It does **not** registe
 - **NGINX** — serves the static website
 - **Jenkins** — automates verification, image building, testing, and deployment
 
-GitHub repository: <https://github.com/TenetiSrujana/BloodLink>
-
 ## 2. Start the project on your Mac
 
 Do these steps whenever you want to demonstrate the project again.
@@ -94,7 +92,7 @@ Do not click **Build Now** when you are specifically demonstrating automatic pol
 
 A successful build should finish with `Finished: SUCCESS`. If a stage fails, open that build's **Console Output** and read the error before retrying.
 
-## 5. Demonstrate the project to a lecturer
+## 5. Demonstrate the project
 
 Use this order for a short demonstration:
 
